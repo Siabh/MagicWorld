@@ -1,34 +1,42 @@
 package com.simon.Classepersonnage;
 
 public class Personnage {
-    private int Numerojoueur;
+    private String NomJoueur;
     private int Niveau;
     private int Vie;
     private int Force;
     private int Agilite;
     private int Intelligence;
+    private String Phrase;
 
-
-    public int attaquebasique(int Numplayerat){
-        return 0;
-    }
-    public int[] attaquespecial(int Numplayerat){
-        return new int[]{0};
-    }
-    public int getNumerojoueur() {
-        return Numerojoueur;
+    public String getPhrase() {
+        return Phrase;
     }
 
-    public void setNumerojoueur(int numerojoueur) {
-        Numerojoueur = numerojoueur;
+    public void setPhrase(String phrase) {
+        Phrase = phrase;
     }
+
+    public Personnage() {
+    }
+
+
+    public void attaquebasique(Personnage playerat){
+    }
+    public void attaquespecial(Personnage playerat){
+    }
+    public void phrase(String entete){
+        System.out.println(entete +"Joueur "+getNomJoueur()+" niveau "+getNiveau()+" je possède "+ getVie()+" de vitalité, "+getForce()+" de force "+getAgilite()+" d'agilité et "+getIntelligence()+" d'intelligence !");
+    }
+
+
 
     public int getNiveau() {
         return Niveau;
     }
 
     public void setNiveau(int niveau) {
-        Niveau = niveau;
+       Niveau=niveau;
     }
 
     public int getVie() {
@@ -44,7 +52,7 @@ public class Personnage {
     }
 
     public void setForce(int force) {
-        Force = force;
+            Force = force;
     }
 
     public int getAgilite() {
@@ -52,7 +60,7 @@ public class Personnage {
     }
 
     public void setAgilite(int agilite) {
-        Agilite = agilite;
+            Agilite = agilite;
     }
 
     public int getIntelligence() {
@@ -60,6 +68,14 @@ public class Personnage {
     }
 
     public void setIntelligence(int intelligence) {
-        Intelligence = intelligence;
+            Intelligence=intelligence;
+    }
+
+    public String getNomJoueur() {
+        return NomJoueur;
+    }
+
+    public void setNomJoueur(String nomJoueur) {
+        NomJoueur = nomJoueur;
     }
 }
