@@ -7,12 +7,14 @@ public class Magicien extends Personnage {
         System.out.println("Joueur "+ getNomJoueur()+" utilise Boule de Feu et inflige "+ getIntelligence() +"dommages.");
         System.out.println("Joueur "+playerat.getNomJoueur()+" perd"+ getIntelligence()+" points de vie");
         playerat.setVie(playerat.getVie()-getIntelligence());
+        playerat.mort();
     }
 
     @Override
     public void attaquespecial(Personnage playerat) {
         System.out.println("Joueur "+ getNomJoueur()+" utilise Soin et gagne"+ 2*getIntelligence() +" en vitalité.");
         setVie(getVie()+2*getIntelligence());
+        playerat.mort();
     }
     @Override
     public String getPhrase() {

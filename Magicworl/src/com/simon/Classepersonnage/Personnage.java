@@ -1,5 +1,8 @@
 package com.simon.Classepersonnage;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Personnage {
     private String NomJoueur;
     private int Niveau;
@@ -18,6 +21,33 @@ public class Personnage {
     }
 
     public Personnage() {
+    }
+
+    public void mort(){
+        if(getVie()<=0){
+            System.out.println("Joueur"+getNomJoueur()+" est mort");
+        }
+    }
+    public int rentrerunevaleur( int borneinf, int bornesup, String caracteristique){
+        int condition=0;
+        int  a=0;
+        do {
+            a=0;
+            do {
+                Scanner sc = new Scanner(System.in);
+                try {
+                    a=sc.nextInt();
+                    condition = 0;
+                } catch (InputMismatchException e) {
+                    System.out.println("Veuillez mettre " + caracteristique + " compris entre " + borneinf + " et " + bornesup);
+                    condition = 1;
+                }
+            }while(condition>0);
+            if(a>bornesup || a<borneinf) {
+                condition=1;
+            }
+        }while(condition>0);
+        return a;
     }
 
 
