@@ -12,14 +12,6 @@ public class Personnage {
     private int Intelligence;
     private String Phrase;
 
-    public String getPhrase() {
-        return Phrase;
-    }
-
-    public void setPhrase(String phrase) {
-        Phrase = phrase;
-    }
-
     public Personnage() {
     }
 
@@ -29,6 +21,7 @@ public class Personnage {
         }
     }
     public int rentrerunevaleur( int borneinf, int bornesup, String caracteristique){
+        //méthode qui retourne un entier compris entre les bornes pour une caractéristique donnée et catchant les exeptions
         int condition=0;
         int  a=0;
         do {
@@ -52,15 +45,23 @@ public class Personnage {
 
 
     public void attaquebasique(Personnage playerat){
+        //attaque basique sur le joueur Playeurat
     }
     public void attaquespecial(Personnage playerat){
+        //attaque special sur le joueur Playeurat
     }
     public void phrase(String entete){
+        //entete personnalisé de chaque classe
         System.out.println(entete +"Joueur "+getNomJoueur()+" niveau "+getNiveau()+" je possède "+ getVie()+" de vitalité, "+getForce()+" de force "+getAgilite()+" d'agilité et "+getIntelligence()+" d'intelligence !");
     }
 
+    public String getPhrase() {
+        return Phrase;
+    }
 
-
+    public void setPhrase(String phrase) {
+        Phrase = phrase;
+    }
     public int getNiveau() {
         return Niveau;
     }
